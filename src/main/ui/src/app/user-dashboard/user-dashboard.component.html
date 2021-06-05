@@ -1,0 +1,152 @@
+<!-- <div class="row"> -->
+<!-- <div *ngIf="isMobile"><button class="btn btn-default" data-toggle="collapse" data-target="#showfilter">
+    Show kpi
+  </button></div> -->
+<!-- </div> -->
+<!-- <div class="row" id="showfilter" [class]="showMobileView"> -->
+<div class="row" id="showfilter" class="hidden-xs">
+  <div class="col-md-2 col-xs-12 cursor">
+    <div class="kpi" matRipple routerLink="/dashboard/today">
+      <div class="kpi-title">
+        Expense Today
+      </div>
+      <div class="kpi-value hidden-xs">
+        {{exp_today}}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2 col-xs-12 cursor">
+    <div class="kpi" matRipple routerLink="/dashboard/week">
+      <div class="kpi-title">
+        Expense this week
+      </div>
+      <div class="kpi-value  hidden-xs">
+        {{KPIValues.expenseWeek }}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-2 col-xs-12 cursor">
+    <div class="kpi" matRipple routerLink="/dashboard/month">
+      <div class="kpi-title ">
+        Expense This Month
+      </div>
+      <div class="kpi-value  hidden-xs">
+        {{KPIValues.expenseMonth}}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2 col-xs-12 cursor">
+    <div class="kpi" matRipple>
+      <div class="kpi-title">
+        Average Expense
+      </div>
+      <div class="kpi-value  hidden-xs">
+        {{KPIValues.expenseAverage}}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2 col-xs-12 cursor">
+    <div class="kpi" matRipple (click)="openBudgeDialog()" matTooltip="Click to enter or update your bugde">
+      <div class="kpi-title">
+        Total Budge
+      </div>
+      <div class="kpi-value  hidden-xs">
+        {{KPIValues.monthlyBudge}}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-2 col-xs-12 cursor">
+    <div class="kpi" matRipple (click)="openIncomeDialog()" matTooltip="Click to enter or update your income">
+      <div class="kpi-title">
+        Total income
+      </div>
+      <div class="kpi-value  hidden-xs">
+        {{KPIValues.monthlyIncome}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="visible-xs hidden-md hidden-lg hidden-sm">
+  <div style="width: 100%;" class="datePanel">
+    <!-- <div style="position:absolute;display: inline-block;">
+      <img src="assets\icon\baseline-arrow_back_ios-24px.svg" alt="back image">     
+    </div> -->
+    <div class="mobile-kpi"  >
+        <div style="width:50%;display: inline-block;margin:5px">
+          <div class="kpi" matRipple routerLink="/dashboard/today">
+            <div class="kpi-title">
+              Expense Today
+            </div>
+            <div class="kpi-value">
+              {{exp_today}}
+            </div>
+          </div>
+        </div>
+        <div style="width:50%;display: inline-block;margin:5px">
+          <div class="kpi" matRipple routerLink="/dashboard/week">
+            <div class="kpi-title">
+              Expense this week
+            </div>
+            <div class="kpi-value">
+              {{KPIValues.expenseWeek}}
+            </div>
+          </div>
+        </div>
+        <div style="width:50%;display: inline-block;margin:5px">
+          <div class="kpi" matRipple routerLink="/dashboard/month">
+            <div class="kpi-title">
+              Expense this Month
+            </div>
+            <div class="kpi-value">
+              {{KPIValues.expenseMonth}}
+            </div>
+          </div>
+        </div>
+        <div style="width:50%;display: inline-block;margin:5px">
+          <div class="kpi" matRipple routerLink="/dashboard/month">
+            <div class="kpi-title">
+              Expense this Month
+            </div>
+            <div class="kpi-value">
+              {{KPIValues.expenseAverage}}
+            </div>
+          </div>
+        </div>
+        <div style="width:50%;display: inline-block;margin:5px">
+         <div class="kpi" matRipple (click)="openBudgeDialog()" matTooltip="Click to enter or update your bugde">
+            <div class="kpi-title">
+              Total Budget
+            </div>
+            <div class="kpi-value">
+              {{KPIValues.monthlyBudge}}
+            </div>
+          </div>
+        </div>
+        <div style="width:50%;display: inline-block;margin:5px">
+          <div class="kpi" matRipple (click)="openIncomeDialog()" matTooltip="Click to enter or update your income">
+            <div class="kpi-title">
+              Expense this Month
+            </div>
+            <div class="kpi-value">
+              {{KPIValues.monthlyIncome}}
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- <div style="position:absolute;display: inline-block;">
+      <img src="assets\icon\baseline-arrow_forward_ios-24px.svg" alt="back image">
+    </div> -->
+  </div>
+
+
+</div>
+
+
+<div class="row">
+  <!-- <a>cllck</a> -->
+  <router-outlet></router-outlet>
+  <!-- <app-today-expense></app-today-expense> -->
+</div>

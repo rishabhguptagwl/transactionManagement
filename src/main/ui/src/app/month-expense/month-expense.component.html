@@ -1,0 +1,106 @@
+<!-- <div class="row"> -->
+<!-- <div class="col-md-12 col-xs-12"> -->
+
+
+  <!-- {{KPIValues.expenseWeek}}
+  {{KPIValues.expenseAverage}}
+  {{KPIValues.expenseMonth}}
+  {{KPIValues.monthlyIncome}}
+  {{KPIValues.monthlyBudge}} -->
+<div class="col-md-4 col-md-offset-4 col-xs-12">
+  <br>
+  <div class="datePanel">
+    <div class="row text-center">
+      <div class="col-md-2 col-xs-2">
+        <div class="button col-md-12 col-xs-12" matRipple (click)="previousdate()"><img
+            src="assets\icon\baseline-arrow_back_ios-24px.svg">
+        </div>
+        <!-- <div class="col-md-10 col-xs-10 font" style="padding: 10px">{{formDate}}</div> -->
+      </div>
+      <div class="col-md-8 col-xs-8" style="margin-top:10px;font-size: 20px">
+        {{month[currentMonth]}}-{{year}}
+      </div>
+      <div class="col-md-2 col-xs-2">
+        <!-- <div class="col-md-10 col-xs-10 font" style="padding: 10px">Month</div> -->
+        <div class="col-md-12 col-xs-12" matRipple style="padding: 10px 0px 10px 0px" (click)="nextDate()"><img
+            src="assets\icon\baseline-arrow_forward_ios-24px.svg"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
+<!-- </div> -->
+
+<div class="col-md-6 col-xs-12">
+  <br>
+  <mat-card id="chart-container">
+    <mat-card-header class="chart-header">
+      <!-- <h3> -->
+      <span class="text-center" style="width: 100%;padding: 5px;">Daily Expense Chart (in INR)</span>
+      <!-- </h3> -->
+    </mat-card-header>
+    <div id="chart" *ngIf="!isTransactionNotFound" ></div>
+    <div style="margin: 10px;font-size: 18px;" class="text-center" *ngIf="isTransactionNotFound">No transaction found</div>
+  </mat-card>
+  <br class="visible-xs">
+</div>
+<div class="col-md-3 col-xs-12">
+  <br>
+  <mat-card>
+    <mat-card-header class="chart-header">
+      <!-- <h3> -->
+      <span class="text-center" style="width: 100%;padding: 5px;">Expense Category Chart</span>
+      <!-- </h3> -->
+    </mat-card-header>
+    <div id="piechart"  *ngIf="!isTransactionNotFound" ></div>
+    <!-- <div class="stats-amount-font-size" *ngIf="!isTransactionNotFound">{{min}}</div> -->
+    <div style="margin: 10px;font-size: 18px;" class="text-center" *ngIf="isTransactionNotFound">No transaction found</div>
+  </mat-card>
+  <br class="visible-xs">
+</div>
+<div class="col-md-3 col-xs-12">
+  <br>
+  <mat-card>
+    <mat-card-header class="chart-header">
+      <!-- <h3> -->
+      <span class="text-center" style="width: 100%;padding: 5px;">Maximum expense</span>
+      <!-- </h3> -->
+    </mat-card-header>
+    <div class="text-center" style="padding: 10px">
+      <div class="stats-date-font-size">{{maxDate}}</div>
+      <div class="stats-amount-font-size" *ngIf="!isTransactionNotFound">{{max}}</div>
+      <div style="margin: 10px;font-size: 18px;" class="text-center" *ngIf="isTransactionNotFound">No transaction found</div>
+    </div>
+  </mat-card>
+
+  <br>
+  <mat-card>
+    <mat-card-header class="chart-header">
+      <!-- <h3> -->
+      <span class="text-center" style="width: 100%;padding: 5px;">Minimum expense</span>
+      <!-- </h3> -->
+    </mat-card-header>
+
+    <div class="text-center" style="padding: 10px">
+      <div class="stats-date-font-size">{{minDate}}</div>
+      <div class="stats-amount-font-size" *ngIf="!isTransactionNotFound">{{min}}</div>
+      <div style="margin: 10px;font-size: 18px;" class="text-center" *ngIf="isTransactionNotFound">No transaction found</div>
+    </div>
+  </mat-card>
+  <br class="visible-xs">
+</div>
+<div class="col-md-12 col-xs-12">
+  <br>
+  <mat-card>
+    <mat-card-header class="chart-header">
+      <!-- <h3> -->
+      <span class="text-center" style="width: 100%;padding: 5px;">Budget Burndown</span>
+      <!-- </h3> -->
+    </mat-card-header>
+    <div id="linechart" style="height: 500px;" *ngIf="!isTransactionNotFound">
+        
+      </div>
+      <div style="margin: 10px;font-size: 18px;" class="text-center" *ngIf="isTransactionNotFound">No transaction found</div> 
+  </mat-card>
+  <br class="visible-xs">
+</div>

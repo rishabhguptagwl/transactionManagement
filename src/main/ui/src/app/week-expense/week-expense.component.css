@@ -1,0 +1,27 @@
+.datePanel{
+    box-shadow: 0px 0px 2px gray;
+    border-radius: 2px;
+    /* height: 100px; */
+}
+
+
+.button{
+    padding: 10px
+}
+
+.font{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+}
+
+.chart-header{
+    background-color: lightblue;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    /* text-align: center; */
+    border-bottom: 1px solid black
+}
+
+.mat-card{
+    padding: 0px !important;
+}

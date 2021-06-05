@@ -1,0 +1,47 @@
+.kpi{
+    /* height: 110px; */
+    width: 100%;
+    box-shadow: 0px 0px 2px gray;
+    border-radius: 2px;
+
+}
+
+.mobile-kpi{
+    overflow-x:auto ;
+    white-space: nowrap;
+    width: 100%;
+    display: inline-block;
+}
+
+.datePanel{
+    box-shadow: 0px 0px 2px gray;
+    border-radius: 2px;
+    /* height: 100px; */
+}
+
+
+
+.cursor{
+    margin-top: 10px; 
+}
+
+.kpi-title{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.kpi-value{
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    font-size: 25px;
+    /* font-style: bold; */
+}
+
+
+.cursor  :hover{
+    cursor: pointer;
+}
+

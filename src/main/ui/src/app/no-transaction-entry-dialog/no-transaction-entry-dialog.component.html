@@ -1,0 +1,30 @@
+<div *ngIf="landingOption">
+  <div class="text-center" style="background-color: lightblue;margin: -24px;padding: 10px;font-size: 20px">
+    No transaction found
+    
+  </div>
+
+
+  <div style="font-size:18px; margin-top: 34px"> Do you want to add todays expenes now...</div>
+  <div class="row pull-right" style="margin-top: 10px;">
+    <div class="col-md-12 col-xs-12">
+      <button mat-raised-button color="primary" (click)="addtransaction()">Yes</button>&nbsp;
+      <button mat-raised-button (click)="closeWithoutAddingTransaction()">No</button>
+    </div>
+  </div>
+</div>
+<div *ngIf="!landingOption">
+  <div class="text-center" style="background-color: lightblue;margin: -24px;padding: 10px;font-size: 20px">Log daily
+    transaction
+    <span (click)="close()" style="float: right">
+      <img src="assets\icon\baseline-close-24px.svg" alt="back image">
+    </span>
+  </div>
+  <div style="margin-left:10px;margin-right: 10px;margin-top:34px;margin-bottom: 20px">
+    <app-daily-transaction></app-daily-transaction>
+  </div>
+  <!-- <div class="footer" style="background-color: lightblue;margin: -24px;font-size: 20px">
+    <div style="margin-left:90%">
+    </div>
+  </div> -->
+</div>

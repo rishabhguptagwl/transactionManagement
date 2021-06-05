@@ -1,0 +1,9 @@
+.panel-body{
+    padding: 0px;
+    overflow-y: scroll;
+    height: 600px;
+}
+
+/* .panel{
+    margin-top:10px;
+} */

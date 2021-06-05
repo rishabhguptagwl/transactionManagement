@@ -1,0 +1,77 @@
+<div class="panel panel-danger" *ngIf="iserror">
+  <div class="panel-body">
+    {{error}}
+  </div>
+</div>
+<!-- <div class="container"> -->
+<form #form=ngForm>
+  <mat-card class="col-md-12">
+    <div class="col-md-offset-2 col-md-1" style="line-height: 2;">
+    </div>
+    <div class="col-md-2">
+      <mat-form-field class="example-full-width">
+        <input matInput [matDatepicker]="picker" id="formDate" placeholder="From" name="formDate" ngModel>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-md-1" style="line-height: 2;">
+    </div>
+    <div class="col-md-2">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="To" [matDatepicker]="picker1" id="toDate" name="toDate" ngModel>
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <br class="visible-xs">
+    <div class="col-md-1 "><button type="submit" class="btn btn-primary" id="btnFiter" (click)="filter(form)"
+        style="width: 100%">Filter</button>
+    </div>
+  </mat-card>
+</form>
+<!-- </div> -->
+
+
+
+<!-- <div class="container"> -->
+<!-- <div class="col-md-12">
+        <mat-card class="table-style"></mat-card>
+    </div> -->
+<div class="row">
+  <div class="col-md-6" style="margin-top: 10px;">
+    <mat-card class="table-style">
+      <table class="table table-striped text-center">
+        <thead>
+          <tr>
+            <th class="text-center" style="width: 100px;">Date</th>
+            <th class="text-center" style="width: 100px;">Transactions</th>
+            <th class="text-center" style="width: 100px;">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let t of arr;let currentIndex=index">
+            <td style="width: 100px; line-height:3">{{t.date}}</td>
+            <td style="width: 100px;">
+              <div *ngFor="let j of t.trans.transactions">{{j.name}}({{j.amount}})</div>
+            </td>
+            <td style="width: 100px; line-height:3">{{total[currentIndex].frequency}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-card>
+  </div>
+  <div class="col-md-6" style="margin-top: 10px;">
+    <mat-card id="chart-container">
+      <div class="chart" id="chart"></div>
+    </mat-card>
+  </div>
+</div>
+<!-- </div> -->
+<!-- <div class="col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-body">
+        
+      </div>
+    </div>
+  </div> -->

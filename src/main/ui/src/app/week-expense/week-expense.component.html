@@ -1,0 +1,70 @@
+<!-- <div class="row"> -->
+<div class="col-md-offset-4 col-md-4 col-xs-12">
+  <br>
+  <div class="datePanel">
+    <div class="row text-center">
+      <div class="col-md-6 col-xs-6">
+        <div class="button col-md-2 col-xs-2" matRipple (click)="previousdate()"><img
+            src="assets\icon\baseline-arrow_back_ios-24px.svg">
+        </div>
+        <div class="col-md-10 col-xs-10 font" style="padding: 10px">{{formDate}}</div>
+      </div>
+      <div class="col-md-6 col-xs-6">
+        <div class="col-md-10 col-xs-10 font" style="padding: 10px">{{toDate}}</div>
+        <div class="col-md-2 col-xs-2" matRipple style="padding: 10px 0px 10px 0px" (click)="nextDate()"><img
+            src="assets\icon\baseline-arrow_forward_ios-24px.svg"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-10 col-xs-12">
+  <br>
+  <div class="row">
+    <div class="col-md-6 col-xs-12">
+      <mat-card>
+        <mat-card-header class="chart-header">
+          <!-- <h3> -->
+          <span class="text-center" style="width: 100%;padding: 5px;">Weekly Expense Chart (in INR)</span>
+          <!-- </h3> -->
+        </mat-card-header>
+        <div id="barchart"></div>
+      </mat-card>
+      <br class="visible-xs">
+    </div>
+    <div class="col-md-6 col-xs-12 ">
+
+      <mat-card>
+
+        <mat-card-header class="chart-header">
+          <!-- <h3> -->
+          <span class="text-center" style="width: 100%;padding: 5px;">Expense Type</span>
+          <!-- </h3> -->
+        </mat-card-header>
+        <div id="piechart">
+        </div>
+        <br class="visible-xs">
+      </mat-card>
+    </div>
+  </div>
+</div>
+<div class="col-md-2 col-xs-12">
+  <br>
+  <mat-card>
+    <table class="table table-stripped text-center">
+      <thead>
+        <tr style="background-color: lightblue">
+          <th class="text-center">Date</th>
+          <th class="text-center">Expense</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let t of total" style="height: 40px">
+          <td>{{t.letter}}</td>
+          <td>{{t.frequency}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card>
+  <br class="visible-xs">
+</div>
+<!-- </div> -->
