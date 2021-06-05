@@ -1,0 +1,24 @@
+.height{
+    height: 340px;
+    overflow: scroll;
+}
+
+.no-margin{
+    margin: 0px;
+}
+
+.no-padding{
+    padding: 0px;
+}
+
+.btn{
+    margin-left: 10px;
+}
+
+.filter{
+    animation:cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+    animation-direction: alternate-reverse;
+    animation-timing-function: linear;
+}

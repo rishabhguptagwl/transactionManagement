@@ -1,0 +1,29 @@
+<div>
+  <div class="showIncome text-center" *ngIf="updateincome">
+    <div class="showincome-title" style="background-color: lightblue;margin: -24px;padding: 10px;font-size: 20px">
+      INCOME
+    </div>
+    <div class="showincome-value" style="margin-top: 15%;">
+      {{income}}
+    </div>
+    <div >
+      <button mat-raised-button (click)="changeFlagToUpdate()" >Update</button>
+    </div>
+  </div>
+
+  <div *ngIf="addIncome">
+    <div class=" text-center" style="background-color: lightblue;margin: -24px;padding: 10px;font-size: 20px">{{showupdatebutton?"Update":"Save"}} your income</div>
+    <div>
+      <mat-form-field class="example-full-width" style="width: 100%;margin-top:15%">
+        <input matInput [(ngModel)]="income" type="number" name="income" ngModel>
+      </mat-form-field>
+    </div>
+    
+    <div class="pull-right">
+      <button mat-raised-button color="primary" (click)="saveIncome()" *ngIf="!showupdatebutton" >Save</button>
+    </div>
+    <div class="pull-right">
+        <button mat-raised-button color="primary" (click)="updateIncome()" *ngIf="showupdatebutton">Update</button>
+      </div>
+  </div>
+</div>

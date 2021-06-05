@@ -1,0 +1,31 @@
+<br>
+<form #form=ngForm>
+  <div class="panel panel-primary">
+    <div class="panel-body">
+      <!-- {{form.value|json}} -->
+      <!-- amount {{TransactionDate}}
+      saving {{saving}}
+      amount {{amount}} -->
+      <h3 class="text-center">New transaction </h3>
+      <mat-form-field style="width: 100%;">
+        <input matInput [matDatepicker]="picker" [max]="maxDate" placeholder="Choose a date" [(value)]="TransactionDate" name="date"
+          [(ngModel)]="TransactionDate" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field style="width: 100%;">
+        <input matInput placeholder="Enter Amount" type="number" name="amount" [(ngModel)]="amount" required pattern="^[0-9]*" #amountValid="ngModel">
+        <mat-error *ngIf="amountValid.errors?.pattern">Not a number</mat-error>
+      </mat-form-field>
+      <mat-form-field style="width: 100%;">
+        <input matInput placeholder="Enter Saving" type="number" name="saving" [(ngModel)]="saving" required pattern="^[0-9]*" #savingValid = "ngModel">
+        <mat-error *ngIf="savingValid.errors?.pattern">Not a number</mat-error>
+        <!-- {{form.get('amount')}} -->
+
+      </mat-form-field>
+      <div class="form-group">
+        <button id="submit" class="btn btn-primary pull-right" (click)="save(form)" [disabled]="!form.valid">Save</button>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,83 @@
+<!-- <div class="col-md-4"></div> -->
+<div class="col-md-12 col-xs-12">
+  <div class="date-change-container row">
+    <div class="col-md-12 col-xs-12">
+      <div class="col-md-3 col-md-offset-5 col-xs-9 ">
+        <div class="row datePanel">
+          <div class="date-container">
+            <div class="col-md-1 col-xs-1 btn-add" matRipple (click)="decreaseDate()" >
+              <div class="col-xs-12 col-md-12" style="padding: 5px 5px 5px 0px">
+                <img src="assets\icon\baseline-arrow_back_ios-24px.svg" alt="back image">
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-offset-2 col-xs-6 text-center" style="margin-top:10px;">
+              <!-- <span class="glyphicon glyphicon-pencil" style="padding: 5px;cursor: pointer;" matRipple matRippleRadius="15" (click)="editToday()"></span> -->
+              <span style="font-size: 1.2em">{{date}}</span>
+            </div>
+            <div class="col-md-1 col-xs-offset-2 col-xs-1 btn-add" matRipple (click)="increaseDate()">
+              <div class="col-xs-12 col-md-12" style="padding: 5px 0px 5px 0px">
+                <img  src="assets\icon\baseline-arrow_forward_ios-24px.svg" alt="forward image"
+                  matRipple>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>      
+      <div  class="col-md-offset-3 col-md-1 col-xs-3">
+        <span class="glyphicon glyphicon-pencil" style="padding: 5px;cursor: pointer;" matRipple matRippleRadius="15" (click)="editToday()" style="margin-top: 15px;"></span>  
+        <span class="glyphicon glyphicon-trash" style="cursor:pointer;margin-top: 15px;margin-left: 20px;" matRipple matRippleRadius="15" (click)="deleteTransaction()"></span>  
+        <!-- <img  style="margin-left:40%;padding-top: 15px;" src="assets\icon\delete-24px.svg" alt="delete" (click)="deleteTransaction()"> -->
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-5 col-xs-12">
+      <mat-card>
+        <mat-card-header class="chart-header">
+          <span class="text-center" style="width: 100%;padding: 5px;">Expense Chart</span>
+        </mat-card-header>
+        <div id="barchart"></div>
+        <div class="text-center" *ngIf="!isData"  style="padding: 10px;">
+            <span style="color: grey;font-size: 20px;margin: 10px">No Data found</span>
+        </div>
+      </mat-card>
+      <br class="visible-xs">
+    </div>
+    <div class="col-md-5 col-xs-12">
+      <mat-card>
+        <mat-card-header class="chart-header">
+          <span class="text-center" style="width: 100%;padding: 5px;">Expense type chart</span>
+        </mat-card-header>
+        <div id="piechart"></div>
+        <div class="text-center" *ngIf="!isData" style="padding: 10px;">
+            <span style="color: grey;font-size: 20px;margin: 10px">No Data found</span>
+        </div>
+      </mat-card>
+      <br class="visible-xs">
+    </div>
+    <div class="col-md-2 col-xs-12">
+      <!-- {{Expenses}} -->
+      <mat-card>
+        <table class="table table-stripped text-center">
+          <thead>
+            <tr style="background-color: lightblue">
+              <th class="text-center">Description</th>
+              <th class="text-center">amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let t of Expenses" style="height: 40px">
+              <td>{{t.letter}}</td>
+              <td>{{t.frequency}}</td>
+            </tr>
+            <tr *ngIf="!isData" id="exp-table-body">
+              <td colspan="2"><span style="color: grey;font-size: 20px;margin: 10px">No Data found</span> </td>
+            </tr>
+          </tbody>
+        </table>
+      </mat-card>
+      <br class="visible-xs">
+    </div>
+  </div>
+</div>

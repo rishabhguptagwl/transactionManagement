@@ -1,0 +1,8 @@
+mat-card-header {
+    width: 100%;
+    /* background-color: blue; */
+}
+
+.mat-card-header .mat-card-header-text {
+    background-color: saddlebrown;
+}

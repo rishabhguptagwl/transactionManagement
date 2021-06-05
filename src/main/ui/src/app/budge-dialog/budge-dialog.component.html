@@ -1,0 +1,32 @@
+<!-- <p>
+{{budget}}
+</p> -->
+<div class="text-center" *ngIf="!noBudget">
+  <div class="showbudget-title text-center"
+    style="background-color: lightblue;margin: -24px;padding: 10px;font-size: 20px">
+    BUDGET
+  </div>
+  <div class="budget-value text-center" style="margin-top: 15%;">
+    {{budget}}
+  </div>
+  <div>
+    <button mat-raised-button (click)="changeFlagToUpdate()">Update</button>
+  </div>
+</div>
+<div class="text-center" *ngIf="noBudget">
+  <div class=" text-center" style="background-color: lightblue;margin: -24px;padding: 10px;font-size: 20px">
+    {{noBudget?"Update":"Save"}} your budget
+  </div>
+  <div>
+    <mat-form-field class="example-full-width" style="width: 100%;margin-top:15%">
+      <input matInput [(ngModel)]="budget" type="number" name="budget" ngModel>
+    </mat-form-field>
+  </div>
+
+  <div class="pull-right" *ngIf="!isUpdate">
+    <button mat-raised-button color="primary" (click)="saveBudget()">Save</button>
+  </div>
+  <div class="pull-right" *ngIf="isUpdate">
+    <button mat-raised-button color="primary" (click)="updateBudget()">Update</button>
+  </div>
+</div>

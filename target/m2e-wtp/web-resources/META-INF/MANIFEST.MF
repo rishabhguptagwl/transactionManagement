@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: account
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Rishabh
+Implementation-Vendor-Id: org.rishabh.example
+Build-Jdk: 1.8.0_241
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/account
+Created-By: Maven Integration for Eclipse
+Main-Class: com.rg.boot
+

@@ -1,0 +1,90 @@
+<div id="screen">
+  <mat-drawer-container class="example-container" hasBackdrop="true" id="page">
+    <mat-drawer #drawer mode="over">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Balance
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item matRipple>
+              <a routerLink="/frist/view" class="link-class" (click)="drawer.toggle()">Balance entry</a>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item matRipple>
+              <a routerLink="/frist/viewdata" class="link-class" (click)="drawer.toggle()">Balance report</a>
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Daily transaction
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item matRipple><a routerLink="/analytics" class="link-class" (click)="drawer.toggle()">Daily
+                transaction entry </a></mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item matRipple><a routerLink="/frist/dailytransaction" class="link-class"
+                (click)="drawer.toggle()">Daily transactions</a></mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Dashboard
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item matRipple> <a routerLink="/dashboard" class="link-class" (click)="drawer.toggle()">Daily
+                transactions</a></mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12" class="header" style="background-color: lightblue;height: 40px;">
+            <div mat-raised-button (click)="drawer.toggle()">
+              <img src="assets\icon\icons8-menu-80.png" style="width: 20px;margin:10px">
+            </div>
+            <!-- <button >Toggle drawer</button> -->
+          </div>
+        </div>
+        <div>
+          <div class="row">
+
+            <div class="col-md-12" style="margin-top:10px ">
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
+
+
+
+
+<!-- <app-transaction-data></app-transaction-data> -->
+
+<!-- <app-transaction-chart></app-transaction-chart> -->
+
+
+<!-- <app-list-saving></app-list-saving> -->
+<!-- <div class="col-md-6">
+  <app-list-all-transaction-view></app-list-all-transaction-view>
+</div>
+<div class="col-md-6">
+  <app-insert-transaction></app-insert-transaction>
+</div> -->

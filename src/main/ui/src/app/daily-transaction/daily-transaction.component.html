@@ -1,0 +1,97 @@
+<form #form=ngForm>
+  <div class="row">
+    <!-- <input type="date" value="2012-03-23"> -->
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-body">
+          <div class=" form-group">
+            <div class="row">
+              <div style="margin-top: 10px;" class="col-md-4 col-xs-4">
+                <label for="transDate">Date:</label>
+              </div>
+              <div class="col-md-8 col-xs-8">
+                <!-- {{defaultDateValue}} -->
+                <!-- <input type="date" id="transDate" name="transDate" class="form-control" [(ngModel)]="todayDate" [(value)]="defaultDateValue"> -->
+                <!-- {{todayDate|json}} -->
+                <div class="col-md-12">
+                  <mat-form-field style="width: 100%;">
+                      <input matInput [matDatepicker]="picker" name="transDate" [(ngModel)]="todayDate" #dateOftransaction="ngModel" required>
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                      <mat-error *ngIf="dateOftransaction.errors?.required">No date entred</mat-error>
+                    </mat-form-field>
+                </div>
+                </div>
+                <!-- {{todayDate}}
+                {{form.value | json}} -->
+              </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-4 col-xs-4"><label for="count">Transactions:</label></div>
+              <div class="col-md-8 col-xs-8" id="count">
+                <button class="btn btn-default" (click)="decDailyTransaction()" style="width: 30%;"><span
+                    class="glyphicon glyphicon-minus-sign"></span></button>
+                <span
+                  style="padding-left: 10px ;padding-right:10px ; font-size: 20px;margin-left: 10%;margin-right: 10%;">{{DailyTransaction}}</span>
+                <button class="btn btn-default" (click)="incDailyTransaction()" style="width: 30%;"><span
+                    class="glyphicon glyphicon-plus-sign"></span></button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-4 col-md-offset-8 col-xs-12">
+              <button class="btn btn-primary" type="button" name="btnSave" (click)="saveDailyTransaction(form)"
+                style="width: 100%;" [(disabled)]="!form.valid">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <!-- <div class="panel panel-primary"> -->
+        <!-- <div class="panel-body"> -->
+          <div class="row">
+            <div class="form-group">
+              <div *ngFor="let item of createRange(DailyTransaction);let currentIndex=index" class="col-md-4">
+              <div class="panel panel-primary">
+                <div class="panel-body" style="padding: 10px">
+                  <!-- <div class="row"> -->
+                      <div class="col-md-12 col-xs-12">
+                          <input type="text" class="form-control" id="transactionName{{currentIndex}}"
+                            name="transactionName{{currentIndex}}" placeholder="Description" style="margin-top: 10px;" required ngModel>
+                        </div>
+                        <div class="col-md-12 col-xs-12">
+                          <input type="number" class="form-control" name="transactionAmount{{currentIndex}}"
+                            id="transactionAmount{{currentIndex}}" placeholder="Amount" style="margin-top: 10px;" required ngModel>
+                        </div>
+                        <div class="col-md-12 col-xs-12">
+                          <br class="visible-xs">
+                          <mat-form-field style="width:100%" >
+                            <mat-label>Type</mat-label>
+                            <mat-select name="type{{currentIndex}}" ngModel required>
+                              <mat-option value="1">
+                                Essential
+                              </mat-option>
+                              <mat-option value="2">
+                                Life Style
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        </div>
+                  <!-- </div> -->
+                    
+                </div>
+              </div>
+                
+              <!-- <hr> -->
+  
+              </div>
+            </div>
+          </div>
+        <!-- </div> -->
+      <!-- </div> -->
+    </div>
+  </div>
+  <!-- {{form.value|json}} -->
+</form>
